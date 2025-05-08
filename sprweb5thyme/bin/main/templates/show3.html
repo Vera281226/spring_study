@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td>번호</td><td>카운트</td><td>인덱스</td><td>아이디</td><td>품명</td><td>가격</td><td>등록일</td>
+	</tr>
+	<tr th:each="ss,idx:${list}">
+   <!-- <td th:if="${idx.odd}" th:text="홀수">
+		<td th:unless="${idx.odd}" th:text="짝수">-->
+		<td th:switch="${idx.even}">
+			<span th:case=true>짝수</span>
+			<span th:case=false>홀수</span>
+		</td>
+		<td>[[${idx.count}]]<td>[[${idx.index}]]<td>[[${ss.id}]]</td><td>[[${ss.name}]]</td><td>[[${ss.price}]]</td><td>[[${ss.regDate}]]</td>
+	</tr>
+</table>
+<a href="/thleaf/ex">show 이동</a>
+<a th:href="@{/thleaf/ex}">show 이동</a>
+</body>
+</html>

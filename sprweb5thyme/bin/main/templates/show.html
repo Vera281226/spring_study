@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td>아이디</td><td>품명</td><td>가격</td><td>등록일</td>
+	</tr>
+	<tr th:each="ss:${dto}">
+		<td>[[${ss.id}]]</td><td>[[${ss.name}]]</td><td>[[${ss.price}]]</td><td>[[${ss.regDate}]]</td>
+	</tr>
+</table>
+</body>
+</html>

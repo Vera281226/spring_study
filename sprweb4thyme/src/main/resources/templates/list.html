@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- 자바 템플릿 엔진 -->
+<head>
+<meta charset="UTF-8">
+<title>타임리프 연습장</title>
+</head>
+<body>
+메시지 : <p th:text="${msg}">엘렐레</p>
+<p>[[${msg}]]</p>
+<p th:text="'메시지는 '+${msg}+'입니다'"/>
+<p th:text="|메시지는 ${msg}입니다|"/>
+
+지역 변수 처리
+<p th:with="kor=90,eng=80" th:text="|${kor} + ${eng} = ${kor + eng}|"
+style="color: blue"
+/>
+관계 연산
+<p th:text="3>=4"/><p th:text="3<4"/>
+<p th:text="a>b"/><p th:text="a<b"/>
+<p th:text="3==4"/><p th:text="3!=4"/>
+조건 연산
+<p th:text="5>4?크다:작다"/>
+<p th:if="5<4">
+안녕
+</p>
+<p th:unless="5==4">
+안녕
+</p>
+<p th:switch="${msg2}">
+	<b th:case="tom" th:text="|${msg2}|"></b>
+</p>
+<p th:text="${sangpum.code}"/>
+<p th:text="${sangpum['sang']}"/>
+<p>[[${sangpum.su}]]</p>
+<p th:text="|${sangpum.dan}|"/>
+<p th:object="${sangpum}">
+	<b th:text="*{code}"/>
+	<b th:text="*{['dan']}"/>
+</p><br>
+<table border="1">
+	<tr>
+		<td>코드</td><td>품명</td><td>수량</td><td>단가</td>
+	</tr>
+	<tr th:each="ss:${list}">
+		<td>[[${ss.code}]]</td><td>[[${ss.sang}]]</td><td>[[${ss.su}]]</td><td>[[${ss.dan}]]</td>
+	</tr>
+</table>
+</body>
+</html>
