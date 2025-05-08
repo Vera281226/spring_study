@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">   
+    <bean id="daoImpl" class="pack.model.DataDaoImpl"/>
+    <bean id="selectImpl" class="pack.controller.SelectServiceImpl">
+    <constructor-arg >
+    	<ref bean="daoImpl"/>
+    </constructor-arg>
+    </bean>
+    <!-- 기본 생성자 호출과 같다 -->
+    <!-- 기본 생성자 생략시 매개변수 입력 생성자를 찾기에 매개변수의 입력이 중요하다 -->
+</beans>
