@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>입력 화면</title>
+    <script th:inline="javascript">
+        function checkForm() {
+            var jik = document.querySelector('input[name="jik"]').value;
+            if (jik === null || jik === "") {
+                alert("직급을 입력해주세요.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form action="search" method="post" onsubmit="return checkForm()">
+    <label for="jik">직급 입력 : </label>
+    <input type="text" name="jik">
+    <input type="submit" value="확인">
+</form>
+</body>
+</html>
