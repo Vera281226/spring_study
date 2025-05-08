@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   <bean id="myInfo" name="kbs,sbs,mbc" class="pack.model.MyInfo"/>
+	   <bean id="msgImpl" class="pack.controller.MessageImpl">
+	   	<constructor-arg index="3" type="pack.model.MyInfo" ref="sbs"/>
+	   	<constructor-arg index="2" value="25" type="int"/>
+	   	<constructor-arg index="1" value="고길동" type="String"/>
+	   	<constructor-arg index="0" value="고길동" type="String"/>
+	   	<property name="spec" value=" 웹 프로그래밍"/>
+	   	<property name="ourInfo" ref="ourInfo" />
+	   	<property name="outFileInter" ref="outFileInterImpl"/>
+	   </bean>
+	   <bean id="ourInfo" class="pack.model.OurInfo"/>
+	   <bean id="outFileInterImpl" class="pack.other.OutFileInterImpl">
+	   <property name="filePath" value="c:/workspr/good.txt"/>
+	   </bean>   
+</beans>
