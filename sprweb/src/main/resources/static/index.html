@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+function func(){
+         f.action="test5"; 
+         f.method="post";  //POST방식
+         f.submit();
+}
+</script>
+</head>
+<body>
+<h1>스프링 웹 프로젝트 시작</h1>
+<a href="test">컨트롤러 접근</a><br>
+<a href="test2">컨트롤러 접근2</a><br>
+<a href="test3">컨트롤러 접근3</a><br>
+<a href="testgood">컨트롤러 접근3</a><br>
+<a href="nice">컨트롤러 접근3</a><br>
+<a href="test4">컨트롤러 접근4</a>
+<form action="test5" method="post">
+	<input type="submit" value="컨트롤러 접근5"><br>
+</form>
+<a href="javascript:func();">컨트롤러 접근5</a><br>
+<form name="f"></form>
+<form action="test6" method="post">
+	<input type="submit" value="컨트롤러 접근6"><br>
+</form>
+<form action="test7" method="post">
+	<input type="submit" value="컨트롤러 접근7"><br>
+</form>
+<a href="test8">데이터 접근</a><br>
+<a href="test8_1">데이터 접근2</a><br>
+<a href="test8_2">데이터 접근3</a><br>
+<hr>
+컨트롤러2 사용<br>
+<form action="test9" method="get">
+	<input type="submit" value="컨트롤러 접근9"><br>
+</form>
+<form action="test9" method="post">
+	<input type="submit" value="컨트롤러 접근9"><br>
+</form>
+컨트롤러 3 사용<br>
+<a href="/java/korea">데이터 접근10</a><br>
+<a href="/java/good">데이터 접근10</a><br>
+<a href="ok">데이터 접근10</a><br>
+<a href="hello">데이터 접근10</a><br>
+</body>
+</html>
